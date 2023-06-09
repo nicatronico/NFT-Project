@@ -21,6 +21,6 @@ class mainTemplate extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.MyComponents.maintemplate');
+        return view('components.Mycomponents.maintemplate');
     }
 }
