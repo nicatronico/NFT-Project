@@ -1,6 +1,9 @@
-<x-mycomponents.maintemplate>
-    <x-mycomponents.header/>
-</x-mycomponents.maintemplate>
+
+<x-MyComponents.maintemplate>
+    <x-MyComponents.header/>
+    
+    <x-MyComponents.footer/>
+</x-MyComponents.maintemplate>
 
 
 
