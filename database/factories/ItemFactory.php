@@ -16,8 +16,20 @@ class ItemFactory extends Factory
      */
     public function definition(): array
     {
+
+        $faker = \Faker\Factory::create();
+        $faker->addProvider(new \Smknstd\FakerPicsumImages\FakerPicsumImagesProvider($faker));
+
+
         return [
-            //
+            'image' => $faker->imageUrl($width = 310, $height = 320),
+            'price' => $faker->randomFloat(),
+            'title' => fake()->words(),
+            'royalties' => $faker->randomFloat(),
+            'size' => $faker->word(),
+            'collection_id' => $faker->numberBetween(1, 6),
+            'category_id' => $faker->numberBetween(1, 8),
+            'author_id' => $faker->numberBetween(1, 25)
         ];
     }
 }
