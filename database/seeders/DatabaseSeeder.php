@@ -18,13 +18,15 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Author::factory()->count(25)->create();
-        User::factory()->count(60)->create();
-        Item::factory()->count(150)->create();
-        Sale::factory()->count(30)->create();
-        Like::factory()->count(500)->create();
+        User::factory()->count(60)->create();       
+        Item::factory()->count(100)->create();
+        Sale::factory()->count(20)->create();
+       
+        Like::factory()->count(10)->for(
+            Item::factory(), 'likeable'
+        )->create();
 
-
-
+        
 
 
     }

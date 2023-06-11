@@ -17,8 +17,8 @@ class SaleFactory extends Factory
     public function definition(): array
     {
         return [
-            'item_id' => $faker->numberBetween(1, 150),
-            'user_id' => $faker->numberBetween(1, 60),
+            'item_id' => fake()->numberBetween(1, 50),
+            'user_id' => fake()->numberBetween(1, 60),
         ];
     }
 }

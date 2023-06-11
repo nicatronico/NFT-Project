@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('image');
-            $table->decimal('price');
+            $table->float('price');
             $table->string('title');
             $table->text('description');
-            $table->double('royalties');
+            $table->string('royalties');
             $table->string('size');
             $table->foreignId('collection_id')->constrained('collections');
             $table->foreignId('category_id')->constrained('categories');
