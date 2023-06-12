@@ -11,7 +11,7 @@
 
 </head>
 
-<body class="flex flex-col bg-gray-800 w-screen">
+<body class="flex  bg-black w-screen items-center justify-center my-[50px]">
   {{$slot}}
 
  
