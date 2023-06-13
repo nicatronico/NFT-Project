@@ -154,7 +154,7 @@
 
 
                 <div>
-                    <h1 class="text-[50px] text-gray-900">WELCOME</h1>
+                    <h1 class="text-[50px] text-gray-900">WELCOME TO</h1>
                     <x-MyComponents.axieslogo/>
                 </div>
 

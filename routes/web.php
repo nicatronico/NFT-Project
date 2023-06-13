@@ -33,7 +33,7 @@ Route::get('/index', function(){
 });
 
 Route::get('/create_item', function(){
-    return view('components.MyComponents.createitem',['url'=> "https://www.pexels.com/es-es/foto/cielo-azul-281260/", 'likes'=>"0", 'title'=>"jjjhj", 'author'=>"yuyuyu", 'price'=>"0"]);
+    return view('components.MyComponents.createitem');
 });
 
 require __DIR__.'/auth.php';
