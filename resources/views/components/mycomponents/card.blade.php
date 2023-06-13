@@ -1,4 +1,5 @@
 
+@props(['source', 'likes', 'title', 'author', 'price'])
 <div class="w-[260px] h-[410px] bg-gray-600 text-white flex flex-col  justify-center items-center gap-y-[10px] rounded-[20px]">
     <div class="w-[230px] mb-[-20px]">
         <img src="{{$source}}" alt="NFT image" class="w-[230px] h-[200px] rounded-[20px]">
@@ -33,10 +34,12 @@
             <div>
                 @php
                     $USD_ETH_Price = 1.755;
-                    $USD_Price = $price * $USD_ETH_Price;               
-                
+                    $USD_Price = (float)$price * $USD_ETH_Price;               
+                   
                 @endphp
-                <span class="text-[16px] font-bold leading-7">{{$price}} ETH</span> <span class="text-[14px] leading-7">= $USD_Price</span>
+
+                <span class="text-[16px] font-bold leading-7">{{$price}} ETH</span> <span class="text-[14px] leading-7">= {{$USD_Price}}</span>
+                
                 
             </div>            
         </div>

@@ -11,10 +11,13 @@ class card extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(
+        public string $url,
+        public string $likes,
+        public string $title,
+        public string $author,
+        public string $price
+    ){}
 
     /**
      * Get the view / contents that represent the component.
