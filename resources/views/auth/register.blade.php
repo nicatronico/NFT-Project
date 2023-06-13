@@ -1,3 +1,7 @@
+
+<x-MyComponents.changingheadertext title="SignUp" url="lll"/>
+
+
 <x-guest-layout>
 
     <form method="POST" action="{{ route('register') }}">
