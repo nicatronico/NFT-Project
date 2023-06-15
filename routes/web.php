@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ItemController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,5 +37,7 @@ Route::get('/index', function(){
 Route::get('/create_item', function(){
     return view('components.MyComponents.createitem');
 });
+
+Route::post('/upload', [ItemController::class,'store']);
 
 require __DIR__.'/auth.php';

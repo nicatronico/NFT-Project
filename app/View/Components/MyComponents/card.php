@@ -12,7 +12,7 @@ class card extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $url,
+        public string $url = " ",
         public string $likes,
         public string $title,
         public string $author,

@@ -1,14 +1,16 @@
 
-
 <x-MyComponents.maintemplate>
-    <x-MyComponents.changingheadertext title="Create Item" url="src"/>
+    <x-MyComponents.changingheadertext title="Create Item" url="Home/Pages/CreateItem"/>
     <div class="w-screen bg-gray-900 flex justify-center px-[255px] py-[80px] gap-x-[80px]">
-        <div> 
-          
-              
+        <div class="flex flex-col gap-y-[30px]"> 
+           <x-MyComponents.card url="$path ?? ''" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
+            <button type='submit' form = "form" class="w-[260px] h-[35px] text-white text-[18px] rounded-[5px] border-2 border-inherit">Save the new item</button>
         </div>
+
+   
+
         <div>
-            <form action="" enctype="multipart/form-data" method ="post" class="w-[450px] flex flex-col gap-y-[15px] bg-inherit">
+            <form id = "form" action="{{action([\App\Http\Controllers\ItemController::class, 'store'])}}" method ="post" class="w-[450px] flex flex-col gap-y-[15px] bg-inherit text-white">
                 @csrf
                 <label for="path" class="text-[20px] font-bold leading-[26px] text-white">Upload file</label>
                 <input type="text" placeholder="PNG, JPG, GIF, WEBP or MP4, Max 200mb" name="path" class="w-[450px] h-[75px] rounded-[8px] border-2 border-white bg-inherit text-[12px]">
@@ -18,32 +20,34 @@
                 
                 
                 
-                <button class="w-[120px] h-[40px] relative rounded-[30px] border-2 border-white top-[-72px] left-[310px] text-white">Upload File</button>
+                <div class="w-[120px] h-[40px] relative rounded-[30px] border-2 border-white top-[-72px] left-[310px] text-white flex justify-center items-center">
+                    <span>Upload File</span> 
+                </div>
 
-                <input type="file" class="w-[100px] h-[50px] relative top-[-120px] left-[320px] text-gray-900 bg-gray-900 invisible">
+                <input type="file" name="inputFile" class="w-[118px] h-[60px] relative top-[-128px] left-[311px] text-gray-900 bg-transparent opacity-0">
 
-
-                <div class="flex justify-between">
+                <div class="flex justify-between mt-[-120px]">
 
                     <div class="w-[330px] flex flex-col justify-center gap-y-[24px]">
                         <label for="author" class="text-[20px] font-bold leading-[26px] text-white">Author</label>
-                        <input type="text" name="author" class="w-[300px] h-[35px] rounded-[8px] border-2 border-white bg-inherit">
+                        <input type="text" name="author" class="w-[260px] h-[35px] rounded-[8px] border-2 border-white bg-inherit">
                         @error('author')
                             <p>{{$author}}</p>
                         @enderror
                     </div>
-                    
+
+                   
                     <div class="w-[150px] flex flex-col justify-center gap-y-[24px]">
                         <label for="Category" class="text-[20px] font-bold leading-[26px] text-white">Category</label>
-                        <select name="collection" id="collection" class="w-[130px] h-[35px] rounded-[8px] border-2 border-white bg-inherit text-white">
-                            <option value="art" class="bg-zinc-500">Art</option>
-                            <option value="music" class="bg-zinc-500">Music</option>
-                            <option value="domainName" class="bg-zinc-500">Domain Names</option>
-                            <option value="virtualWorld" class="bg-zinc-500">Virtual Worlds</option>
-                            <option value="tradingCard" class="bg-zinc-500">Trading Cards</option>
-                            <option value="collectibles" class="bg-zinc-500">Collectibles</option>
-                            <option value="sport" class="bg-zinc-500">Sport</option>
-                            <option value="utility" class="bg-zinc-500">Utility</option>
+                        <select form='form' name="category" id="category" class="w-[150px] h-[35px] rounded-[8px] border-2 border-white bg-inherit text-white">
+                            <option value="Art" class="bg-zinc-500">Art</option>
+                            <option value="Music" class="bg-zinc-500">Music</option>
+                            <option value="Domain Names" class="bg-zinc-500">Domain Names</option>
+                            <option value="Virtual Worlds" class="bg-zinc-500">Virtual Worlds</option>
+                            <option value="Trading Cards" class="bg-zinc-500">Trading Cards</option>
+                            <option value="Collectibles" class="bg-zinc-500">Collectibles</option>
+                            <option value="Sports" class="bg-zinc-500">Sports</option>
+                            <option value="Utility" class="bg-zinc-500">Utility</option>
                         </select>
                     </div>
 
@@ -71,7 +75,7 @@
 
                 <div class="w-[450px] flex items-center justify-between">
 
-                    <div class="w-[145px] flex flex-col justify-center gap-y-[24px]">
+                    <div class="w-[145px] flex flex-col justify-center gap-y-[10px]">
                         <label for="royalties" class="text-[20px] font-bold leading-[26px] text-white">Royalties</label>
                         <input type="text" name="royalties" class="w-[145px] h-[35px] rounded-[8px] border-2 border-white bg-inherit">
                         @error('royalties')
@@ -79,7 +83,7 @@
                         @enderror
                     </div>
 
-                    <div class="w-[145px] flex flex-col justify-center gap-y-[24px]">
+                    <div class="w-[145px] flex flex-col justify-center gap-y-[10px]">
                         <label for="size" class="text-[20px] font-bold leading-[26px] text-white">Size</label>
                         <input type="text" name="size" class="w-[145px] h-[35px] rounded-[8px] border-2 border-white bg-inherit">
                         @error('size')
@@ -87,7 +91,7 @@
                         @enderror
                     </div>
 
-                    <div class="w-[145px] flex flex-col justify-center gap-y-[24px]">
+                    <div class="w-[145px] flex flex-col justify-center gap-y-[10px]">
                         <label for="collection" class="text-[20px] font-bold leading-[26px] text-white">Collection</label>
                         <input type="text" name="collection" class="w-[145px] h-[35px] rounded-[8px] border-2 border-white bg-inherit">
                         @error('collection')

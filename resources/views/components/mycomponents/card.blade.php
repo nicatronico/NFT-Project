@@ -1,24 +1,29 @@
 
-@props(['source', 'likes', 'title', 'author', 'price'])
+
 <div class="w-[260px] h-[410px] bg-gray-600 text-white flex flex-col  justify-center items-center gap-y-[10px] rounded-[20px]">
     <div class="w-[230px] mb-[-20px]">
-        <img src="{{$source}}" alt="NFT image" class="w-[230px] h-[200px] rounded-[20px]">
+        <div class="w-[230px] h-[200px] rounded-[20px] bg-gray-900">
+            <img src="{{$url ?? ' '}}" alt="" class="w-[230px] h-[200px] rounded-[20px]">
+        </div>
         <button class="flex gap-x-[5px] justify-center items-center w-[60px] h-[25px] bg-black rounded-[5px] relative top-[-190px] right-[-160px]">
             <svg width="12" height="10" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.7145 1.64647C12.9744 -0.0931851 10.1436 -0.0931851 8.40393 1.64647L7.99986 2.05031L7.59603 1.64647C5.85637 -0.0934206 3.02531 -0.0934206 1.28565 1.64647C-0.418689 3.35081 -0.429756 6.05236 1.25998 7.93072C2.80114 9.64329 7.34643 13.3432 7.53928 13.4998C7.6702 13.6063 7.82773 13.6581 7.98432 13.6581C7.9895 13.6581 7.99468 13.6581 7.99963 13.6578C8.16163 13.6654 8.32481 13.6098 8.45997 13.4998C8.65282 13.3432 13.1986 9.64329 14.7402 7.93048C16.4297 6.05236 16.4186 3.35081 14.7145 1.64647ZM13.69 6.98554C12.4884 8.32042 9.18546 11.0735 7.99963 12.0505C6.8138 11.0738 3.51155 8.32089 2.31018 6.98577C1.13142 5.67561 1.12035 3.80974 2.28452 2.64558C2.87908 2.05125 3.6599 1.75385 4.44072 1.75385C5.22154 1.75385 6.00236 2.05101 6.59693 2.64558L7.48512 3.53377C7.59085 3.6395 7.72412 3.7026 7.86399 3.72474C8.09099 3.77348 8.33729 3.71014 8.51389 3.53401L9.40256 2.64558C10.5919 1.45668 12.5266 1.45692 13.7152 2.64558C14.8794 3.80974 14.8683 5.67561 13.69 6.98554Z" fill="white"/>
             </svg>
-           <span class="text-[12px] font-bold">{{$likes}}</span>
+           <span class="text-[12px] font-bold">{{$likes ?? '0'}}</span>
         </button>
     </div>
 
-    <h1 class="w-[230px] text-[18px] font-bold">"{{$title}}"</h1>
+    <h1 class="w-[230px] text-[18px] font-bold">"{{$title ?? 'No title set yet'}}"</h1>
 
     <div class="flex justify-between items-center w-[230px] gap-y-[8px]">
         <div class="flex gap-x-[10px] justify-center items-center">
-            <img src="{{$source}}" alt="{{$author}}.' image'" class="w-[35px] h-[35px] rounded-[10px]" >
+            
+            <div class="w-[35px] h-[35px] rounded-[10px] bg-gray-900" >
+                <img src="{{$url ?? ' '}}" alt="" class="w-[35px] h-[35px] rounded-[10px]">
+            </div>
             <div class="flex flex-col gap-y-[-5px]">
                 <span class="text-[14px] text-zinc-400">Creator</span>
-                <span class="text-[12px] font-bold">{{$author}}</span>
+                <span class="text-[12px] font-bold">{{$author ?? 'No author set yet'}}</span>
             </div>
         </div>
         <div class="rounded-[5px] w-[50px] h-[25px] bg-blue-800 flex justify-center items-center">
@@ -32,15 +37,9 @@
         <div>
             <span class="text-[14px] text-zinc-400">Current Bid</span>
             <div>
-                @php
-                    $USD_ETH_Price = 1.755;
-                    $USD_Price = (float)$price * $USD_ETH_Price;               
-                   
-                @endphp
-
-                <span class="text-[16px] font-bold leading-7">{{$price}} ETH</span> <span class="text-[14px] leading-7">= {{$USD_Price}}</span>
-                
-                
+               
+                <span class="text-[16px] font-bold leading-7">{{$price ?? '0'}} ETH</span> <span class="text-[14px] leading-7">= {{(float)$price*1.755}}</span>
+                                
             </div>            
         </div>
         <div>

@@ -13,4 +13,6 @@ class Author extends Model
     public function items():HasMany{
         return $this->hasMany(Item::Class);
     }
+
+    protected $fillable = ['name', 'description'];
 }

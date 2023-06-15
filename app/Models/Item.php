@@ -35,4 +35,10 @@ class Item extends Model
     {
         return $this->morphMany(Like::class, 'likeable');
     }
+
+    protected $fillable = ['image', 'price', 'title', 
+    'description', 'royalties', 'size',
+    'author_id', 'collection_id', 'category_id'];
+
+   
 }

@@ -19,4 +19,6 @@ class Collection extends Model
     {
         return $this->morphMany(Like::class, 'likeable');
     }
+
+    protected $fillable = ['name'];
 }
