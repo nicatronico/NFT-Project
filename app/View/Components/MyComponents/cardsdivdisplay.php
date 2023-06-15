@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\MyComponent;
+namespace App\View\Components\MyComponents;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class authorprofile extends Component
+class cardsdivdisplay extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class authorprofile extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.MyComponent.authorprofile');
+        return view('components.MyComponents.cardsdivdisplay');
     }
 }

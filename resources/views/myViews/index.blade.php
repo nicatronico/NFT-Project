@@ -1,6 +1,6 @@
 
 <x-MyComponents.maintemplate>
-  <x-MyComponents.authorprofile/>
+  <x-MyComponents.explore/>
 </x-MyComponents.maintemplate>
 
 
