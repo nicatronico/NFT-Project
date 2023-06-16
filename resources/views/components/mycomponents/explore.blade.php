@@ -1,6 +1,6 @@
 
 <x-MyComponents.maintemplate>
-    <x-MyComponents.changingheadertext title="Explore" url="Home/Pages/Explore"/>
+    <x-MyComponents.changingheadertext title="Explore" path="Explore" linkName="Explore"/>
     <div class="w-screen bg-gray-900 flex justify-center py-[80px] gap-x-[50px]">
         <div class="flex flex-col gap-y-[30px] w-[150px] text-white"> 
          

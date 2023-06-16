@@ -8,12 +8,17 @@ use Illuminate\View\Component;
 
 class changingheadertext extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
+   
+
+    public function __construct(
+        public string $path = "Explore",
+        public string $title,
+        public string $linkName = "Explore"
+     )
     {
-        //
+        $this -> $path = $path;
+        $this -> $title = $title;
+        $this -> $linkName = $linkName;
     }
 
     /**

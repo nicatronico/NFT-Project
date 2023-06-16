@@ -1,9 +1,9 @@
 
 <x-MyComponents.maintemplate>
-    <x-MyComponents.changingheadertext title="Create Item" url="Home/Pages/CreateItem"/>
+    <x-MyComponents.changingheadertext title="Create Item" path='CreateItem' linkName='CreateItem'/>
     <div class="w-screen bg-gray-900 flex justify-center px-[255px] py-[80px] gap-x-[80px]">
         <div class="flex flex-col gap-y-[30px]"> 
-           <x-MyComponents.card url="$path ?? ''" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
+           <x-MyComponents.card :path="$path ?? ''" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
             <button type='submit' form = "form" class="w-[260px] h-[35px] text-white text-[18px] rounded-[5px] border-2 border-inherit">Save the new item</button>
         </div>
 
@@ -97,17 +97,7 @@
                         @error('collection')
                             <p>{{$collection}}</p>
                         @enderror
-                    <!--   
-                        <select name="collection" id="collection" class="w-[210px] h-[45px] rounded-[8px] border-2 border-white bg-inherit text-white">
-                            <option value="abstraction" class="bg-zinc-500">Abstraction</option>
-                            <option value="patternlicious" class="bg-zinc-500">Patternlicious</option>
-                            <option value="sketchify" class="bg-zinc-500">Sketchify</option>
-                            <option value="cartoonism" class="bg-zinc-500">Cartoonism</option>
-                            <option value="virtuland" class="bg-zinc-500">Virtuland</option>
-                            <option value="papercut" class="bg-zinc-500">Papercut</option>
-                        </select>
-                    -->
-
+                  
                     </div>
 
                 </div>

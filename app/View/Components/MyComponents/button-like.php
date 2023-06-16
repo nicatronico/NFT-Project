@@ -8,12 +8,12 @@ use Illuminate\View\Component;
 
 class ButtonLike extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
+    public $likes;
+
+    public function __construct($likes = 0)
     {
-        //
+        $this->$likes =$likes;       
+
     }
 
     /**

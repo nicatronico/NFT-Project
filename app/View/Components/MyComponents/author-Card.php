@@ -8,12 +8,13 @@ use Illuminate\View\Component;
 
 class authorCard extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
+    public $author;
+    public $path;
+    
+    public function __construct($author="Unknown", $path="https://media.istockphoto.com/id/1054899222/es/foto/mujer-an%C3%B3nima-que-cubre-la-cara-con-papel.jpg?s=1024x1024&w=is&k=20&c=Xr2kOvVWnZcBmrbCMpzBhdhdyacTByuBBVAtmTtFW90=")
     {
-        //
+        $this->$author = $author;
+        $this->$path = $path;
     }
 
     /**

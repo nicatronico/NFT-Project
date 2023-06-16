@@ -1,15 +1,15 @@
 
 <x-MyComponents.maintemplate>
-    <x-MyComponents.changingheadertext title="Item Detail" url="Home/Pages/ItemDetail"/>
+    <x-MyComponents.changingheadertext title="Item Detail" path="Home/Pages/ItemDetail" linkName="ItemDetail"/>
     
     <div class="w-screen bg-gray-900 flex justify-center gap-x-[30px]">
         <div class="w-[1000px] bg-gray-900 flex flex-col justify-center py-[80px] gap-x-[50px] gap-y-[25px]">
             <div class="flex justify-center gap-x-[60px]">
                 <div class="min-w-[350px] flex flex-col bg-gray-600">
-                    <img src="https://images.pexels.com/photos/8105039/pexels-photo-8105039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Item image" class="w-[350px] h-[360px]">
+                    <img src="https://images.pexels.com/photos/8694617/pexels-photo-8694617.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Item image" class="w-[350px] h-[360px]">
                 </div>
                 <div class="w-[450px] flex flex-col text-white">
-                    <h1 class="text-2xl font-bold">"The Fantasy Flower Illustration"</h1>
+                    <h1 class="text-2xl font-bold">"My Favorite Breakfast"</h1>
                     <div>
                         <div class="flex gap-x-[10px]">
                             <button class="flex gap-x-[5px] justify-center items-center w-[60px] h-[25px] bg-gray-700 relative top-[15px] right-[0px]  rounded-full">
@@ -30,7 +30,7 @@
                             </div>
                             <div class="flex flex-col">
                                 <span class="text-gray-400">Created by</span>
-                                <span class="text-white font-bold">Firulays</span>
+                                <span class="text-white font-bold">Firulais</span>
                             </div>
                        </div>
 
@@ -48,8 +48,9 @@
                     </div>
                 </div>
             </div>
-            <h2 class="mt-[35px]">More From This Author</h2>
+            <h2 class="mt-[35px] text-[25px] text-white font-normal">More From This Author</h2>
             <x-MyComponents.small-carrousell/>
+            
         </div>
     </div>
     

@@ -1,5 +1,5 @@
 
-<x-MyComponents.changingheadertext title="SignUp" url="lll"/>
+<x-MyComponents.changingheadertext title="SignUp" path="SignUp" link_name="SignUp"/>
 
 
 <x-guest-layout>
