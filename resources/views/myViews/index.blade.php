@@ -1,6 +1,6 @@
 
 <x-MyComponents.maintemplate>
-  <x-MyComponents.explore/>
+  <x-MyComponents.item-detail/>
 </x-MyComponents.maintemplate>
 
 

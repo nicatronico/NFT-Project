@@ -100,13 +100,7 @@
             
         </div>
 
-        <x-MyComponents.cardsdivdisplay/>      
-        
-
-
-
-
-
+        <x-MyComponents.cardsdivdisplay/>   
 
     </div>
     <x-MyComponents.footer/>

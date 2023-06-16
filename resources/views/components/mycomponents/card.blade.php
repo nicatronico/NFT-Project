@@ -1,6 +1,6 @@
 
 
-<div class="w-[260px] h-[410px] bg-gray-600 text-white flex flex-col  justify-center items-center gap-y-[10px] rounded-[20px]">
+<div class="min-w-[260px] h-[410px] bg-gray-600 text-white flex flex-col  justify-center items-center gap-y-[10px] rounded-[20px]">
     <div class="w-[230px] mb-[-20px]">
         <div class="w-[230px] h-[200px] rounded-[20px] bg-gray-900">
             <img src="{{$url ?? ' '}}" alt="" class="w-[230px] h-[200px] rounded-[20px]">
