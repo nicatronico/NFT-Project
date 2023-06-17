@@ -1,4 +1,4 @@
-<header class="flex flex-row items-center justify-between  w-screen bg-gray-500 text-white px-[150px]">   
+<header class="flex flex-row items-center justify-between  w-screen bg-{{$color}} text-white px-[150px]">   
     <x-MyComponents.axieslogo/>
     <x-nav-link class="flex flex-row items-center justify-center gap-x-[40px]">
         <a href="#">Home</a>       
