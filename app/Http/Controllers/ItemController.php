@@ -11,14 +11,7 @@ use DB;
 
 class ItemController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
+    
     /**
      * Show the form for creating a new resource.
      */
@@ -32,6 +25,19 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
+        $request -> validate(
+            [
+                'image' => 'required',
+                'price' => 'required',
+                'title' => 'required',
+                'description' =>  'required',
+                'royalties' =>  'required',
+                'size' =>  'required',
+                'author' =>  'required',
+                'collection' => 'required'
+                ]
+        );
+        
         $item = new Item();
 
         $item->image = $request->path;
@@ -70,7 +76,8 @@ class ItemController extends Controller
       
         return view('components.MyComponents.createitem',
         [
-        'image' => $request->path,
+      //  'path' => $request->path,
+        'path' => "https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&w=600",
         'price' => $request->price,
         'title' => $request->title,
         'description' => $request->description,
@@ -85,30 +92,16 @@ class ItemController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+    public function getAllItems(){
+        $items = Item::query()->get();
+        return(['items' -> $items]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+    
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+   
+
 }

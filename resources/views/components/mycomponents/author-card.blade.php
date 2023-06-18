@@ -1,9 +1,9 @@
 <div class="w-[900px] h-[200px] bg-zinc-800 rounded-lg">
    <div class="w-[900px] h-[155px] bg-inherit flex justify-end items-center rounded-t-lg">
        
-        <img src="{{$path ?? ''}}" alt="" class="w-[150px] h-[165px] bg-gray-400 rounded-lg relative top-[20px] left-[-25px]">
+        <img src="{{$path ?? ''}}" alt="The author pic" class="w-[150px] h-[165px] bg-gray-400 rounded-lg relative top-[20px] left-[-25px]">
         
-        <div class="flex justify-between w-[700px] h-[100px] ">
+        <div class="flex justify-between w-[700px] h-[100px]">
             <div class="flex flex-col w-[350px] h-[100px]">
                 <span class="text-[16px] text-white">Author Profile</span>
                 <h1 class="text-[20px] text-white font-bold">{{$author ?? ''}}</h1>

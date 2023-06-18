@@ -1,21 +1,44 @@
-
+       
 <x-MyComponents.maintemplate>
     <x-MyComponents.changingheadertext title="Create Item" path='CreateItem' linkName='CreateItem'/>
     <div class="w-screen bg-gray-900 flex justify-center px-[255px] py-[80px] gap-x-[80px]">
         <div class="flex flex-col gap-y-[30px]"> 
-           <x-MyComponents.card :path="$path ?? ''" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
-            <button type='submit' form = "form" class="w-[260px] h-[35px] text-white text-[18px] rounded-[5px] border-2 border-inherit">Save the new item</button>
-        </div>
+      
 
-   
+           <x-MyComponents.card id="card">
+                <x-slot:path>
+                    {{$path ?? ''}}
+                </x-slot>
+
+                <x-slot:title>
+                    {{$title ?? ''}}
+                </x-slot>
+
+                <x-slot:author>
+                    {{$author ?? ''}}
+                </x-slot>
+
+                <x-slot:likes>
+                    {{$likes ?? ''}}
+                </x-slot>
+
+                <x-slot:price>
+                    {{$price ?? ''}}
+                </x-slot>
+           </x-MyComponents.card>
+           
+           <button type='submit' form = "form" class="w-[260px] h-[35px] text-white text-[18px] rounded-[5px] border-2 border-inherit">Save the new item</button>
+        </div>
+  
+       
 
         <div>
-            <form id = "form" action="{{action([\App\Http\Controllers\ItemController::class, 'store'])}}" method ="post" class="w-[450px] flex flex-col gap-y-[15px] bg-inherit text-white">
+            <form id = "form" action="{{action([\App\Http\Controllers\ItemController::class, 'store'])}}" method ="post" enctype="multipart/form-data" class="w-[450px] flex flex-col gap-y-[15px] bg-inherit text-white">
                 @csrf
                 <label for="path" class="text-[20px] font-bold leading-[26px] text-white">Upload file</label>
-                <input type="text" placeholder="PNG, JPG, GIF, WEBP or MP4, Max 200mb" name="path" class="w-[450px] h-[75px] rounded-[8px] border-2 border-white bg-inherit text-[12px]">
+                <input type="text" id="text" placeholder="PNG, JPG, GIF, WEBP or MP4, Max 200mb" name="path" class="w-[450px] h-[75px] rounded-[8px] border-2 border-white bg-inherit text-[12px]">
                 @error('path')
-                    <p>{{$path}}</p>
+                    <p class = "text-red-600">{{$message}}</p>
                 @enderror
                 
                 
@@ -24,7 +47,7 @@
                     <span>Upload File</span> 
                 </div>
 
-                <input type="file" name="inputFile" class="w-[118px] h-[60px] relative top-[-128px] left-[311px] text-gray-900 bg-transparent opacity-0">
+                <input type="file" id="inputFile" name="inputFile" class="w-[118px] h-[60px] relative top-[-128px] left-[311px] text-gray-900 bg-transparent opacity-0">
 
                 <div class="flex justify-between mt-[-120px]">
 
@@ -32,7 +55,7 @@
                         <label for="author" class="text-[20px] font-bold leading-[26px] text-white">Author</label>
                         <input type="text" name="author" class="w-[260px] h-[35px] rounded-[8px] border-2 border-white bg-inherit">
                         @error('author')
-                            <p>{{$author}}</p>
+                            <p class = "text-red-600">{{$message}}</p>
                         @enderror
                     </div>
 
@@ -50,26 +73,29 @@
                             <option value="Utility" class="bg-zinc-500">Utility</option>
                         </select>
                     </div>
+                    @error('category')
+                            <p class = "text-red-600">{{$message}}</p>
+                    @enderror
 
                 </div>
 
                 <label for="price" class="text-[20px] font-bold leading-[26px] text-white">Price</label>
                 <input type="text" name="price" class="w-[450px] h-[35px] rounded-[8px] border-2 border-white bg-inherit">
                 @error('price')
-                    <p>{{$price}}</p>
+                    <p class = "text-red-600">{{$message}}</p>
                 @enderror
 
                 <label for="title" class="text-[20px] font-bold leading-[26px] text-white">Title</label>
                 <input type="text" name="title" class="w-[450px] h-[35px] rounded-[8px] border-2 border-white bg-inherit">
                 @error('title')
-                    <p>{{$title}}</p>
+                    <p class = "text-red-600">{{$message}}</p>
                 @enderror
 
 
                 <label for="description" class="text-[20px] font-bold leading-[26px] text-white">Description</label>
                 <input type="text" name="description" class="w-[450px] h-[35px] rounded-[8px] border-2 border-white bg-inherit">
                 @error('description')
-                    <p>{{$description}}</p>
+                    <p class = "text-red-600">{{$message}}</p>
                 @enderror
 
 
@@ -79,7 +105,7 @@
                         <label for="royalties" class="text-[20px] font-bold leading-[26px] text-white">Royalties</label>
                         <input type="text" name="royalties" class="w-[145px] h-[35px] rounded-[8px] border-2 border-white bg-inherit">
                         @error('royalties')
-                            <p>{{$royalties}}</p>
+                            <p class = "text-red-600">{{$message}}</p>
                         @enderror
                     </div>
 
@@ -87,7 +113,7 @@
                         <label for="size" class="text-[20px] font-bold leading-[26px] text-white">Size</label>
                         <input type="text" name="size" class="w-[145px] h-[35px] rounded-[8px] border-2 border-white bg-inherit">
                         @error('size')
-                            <p>{{$size}}</p>
+                            <p class = "text-red-600">{{$message}}</p>
                         @enderror
                     </div>
 
@@ -95,7 +121,7 @@
                         <label for="collection" class="text-[20px] font-bold leading-[26px] text-white">Collection</label>
                         <input type="text" name="collection" class="w-[145px] h-[35px] rounded-[8px] border-2 border-white bg-inherit">
                         @error('collection')
-                            <p>{{$collection}}</p>
+                            <p class = "text-red-600">{{$message}}</p>
                         @enderror
                   
                     </div>
@@ -109,5 +135,24 @@
 
     
     <x-MyComponents.footer/>
+
+    <script>
+        const btn = document.querySelector('#inputFile')
+        const text = document.querySelector('#text')
+        const card_path = document.querySelector('#card')
+        const title = document.querySelector('#tile')
+        const author = document.querySelector('#author')
+        const price = document.querySelector('#price')
+        btn.addEventListener("change", ()=>{
+            text.value = btn.value           
+        })
+
+        title.addEventListener("change", ()=>{
+            
+        })
+    </script>
+ 
 </x-MyComponents.maintemplate>
+
+
 

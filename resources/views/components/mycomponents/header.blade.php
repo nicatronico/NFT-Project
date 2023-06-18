@@ -1,8 +1,8 @@
 <header class="flex flex-row items-center justify-between  w-screen bg-{{$color}} text-white px-[150px]">   
     <x-MyComponents.axieslogo/>
     <x-nav-link class="flex flex-row items-center justify-center gap-x-[40px]">
-        <a href="#">Home</a>       
-        <a href="#">Explore</a>
+        <a href="{{url('/home')}}">Home</a>      
+        <a href="{{url('/explore')}}">Explore</a>
         <a href="#">Activity</a>
         <a href="#">Community</a>
         <a href="#">Pages</a>

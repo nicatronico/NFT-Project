@@ -134,11 +134,10 @@
 
                 <!-- Navigation Links -->
                 
-                        <nav class="relative top-[20px] flex gap-x-[40px] font-medium text-gray-600 relative top-[20px] left-[140px]">
-                            <a href="">Create Item</a>
+                        <nav class="relative top-[20px] flex gap-x-[40px] font-medium text-gray-600 relative top-[20px] left-[140px] ml-[150px]">
                             <a href="">View Author</a>
-                            <a href="">Create Item</a>
-                            <a href="">Explore Item</a>
+                            <a href="{{url('/create_item')}}">Create Item</a>
+                            <a href="{{url('/explore')}}">Explore Item</a>
                         </nav>
                     
               

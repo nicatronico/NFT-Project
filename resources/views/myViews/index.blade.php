@@ -1,7 +1,9 @@
 
 <x-MyComponents.maintemplate>
 
-  <x-MyComponents.header color="transparent"/>
+  <div class="z-10">
+    <x-MyComponents.header color="transparent"/>
+  </div>
   <hr class="w-screen border-[1px] border-gray-700 mt-[10px]">
 
   <div class="flex flex-col text-white relative left-[-285px] top-[100px] gap-y-[30px]">
@@ -10,18 +12,23 @@
       </h1>
       <p class="text-gray-300">Marketplace for monster character collections non fungible token NFTs</p>
       
-      <div class="flex gap-x-[20px]">
-          <button class="w-[130px] h-[45px] flex justify-center items-center gap-x-[10px] bg-transparent border-[1px] border-blue-700 text-white rounded-full font-bold">
-              <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="flex gap-x-[20px] z-10">
+          <button class="w-[130px] h-[45px] bg-transparent border-[1px] border-blue-700 text-white rounded-full font-bold">
+                 
+              <a href="{{url('/explore')}}" class="w-[130px] h-[45px] flex justify-center items-center gap-x-[10px]">               
+                <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M11.5018 14.208L12.7719 12.0081C15.6056 7.09999 15.241 2.93672 14.9644 1.41039C14.9351 1.24485 14.8342 1.10183 14.6899 1.01705C14.5447 0.932505 14.3707 0.916004 14.2117 0.971335C12.7383 1.48437 8.90813 3.22727 6.07185 8.13984L4.80142 10.3403L4.23711 10.3794C3.14896 10.4556 2.16906 11.0678 1.6233 12.0131L0.107343 14.6388C0.0175629 14.7943 0.0203742 14.9876 0.114687 15.1409C0.209878 15.294 0.381355 15.3818 0.560862 15.3695L2.38816 15.2526C2.90103 15.2202 3.41204 15.3391 3.85737 15.5962L4.82773 16.1565L4.09308 17.4289C3.95793 17.663 4.03802 17.9619 4.27155 18.0968L5.04851 18.5453C5.28205 18.6802 5.58096 18.6001 5.71611 18.366L6.45076 17.0935L7.42057 17.6535C7.8659 17.9106 8.22557 18.2929 8.45358 18.7552L9.26515 20.395C9.34425 20.5566 9.50608 20.6611 9.68622 20.6671C9.86613 20.6721 10.035 20.5779 10.1248 20.4223L11.6407 17.7966C12.1858 16.8525 12.2255 15.6974 11.7486 14.7162L11.5018 14.208ZM10.142 8.82732C9.33605 8.36201 9.05917 7.33044 9.52448 6.5245C9.99011 5.718 11.0216 5.44256 11.8275 5.90787C12.6329 6.37286 12.9101 7.40387 12.4445 8.21037C11.9792 9.01631 10.9474 9.29231 10.142 8.82732Z" fill="white"/>
-              </svg>      
-              <span>Explore</span>
+                </svg> 
+                <span>Explore</span>                
+              </a>
           </button> 
           <button class="w-[130px] h-[45px] flex justify-center items-center gap-x-[10px] bg-white text-gray-800 rounded-full font-bold">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="blue" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17.991 14.8704L15.549 1.02157C15.4928 0.7029 15.189 0.490244 14.8702 0.546298L1.02141 2.98821C0.702743 3.04438 0.48993 3.34829 0.546102 3.66696L2.98801 17.5158C3.015 17.6689 3.10168 17.8049 3.22899 17.8941C3.32817 17.9635 3.44563 18 3.56508 18C3.59895 18 3.63301 17.9971 3.6668 17.9911L17.5156 15.5492C17.6687 15.5223 17.8047 15.4356 17.8939 15.3083C17.983 15.181 18.0179 15.0235 17.991 14.8704ZM3.66821 7.8763C3.61203 7.55763 3.82485 7.25372 4.14352 7.19755L13.3761 5.56958C13.6951 5.51341 13.9987 5.72618 14.0549 6.04485C14.1111 6.36353 13.8983 6.66743 13.5796 6.7236L4.34699 8.35161C4.31258 8.35767 4.27832 8.3606 4.24457 8.3606C3.96555 8.3606 3.71832 8.1606 3.66821 7.8763ZM11.316 11.8826L5.16098 12.9679C5.12656 12.974 5.09231 12.9769 5.05856 12.9769C4.77953 12.9769 4.53231 12.7769 4.48219 12.4926C4.42602 12.1739 4.63883 11.87 4.9575 11.8138L11.1125 10.7285C11.4314 10.6723 11.7351 10.8851 11.7913 11.2038C11.8475 11.5225 11.6347 11.8264 11.316 11.8826ZM13.9865 9.03177L4.75395 10.6597C4.71953 10.6658 4.68528 10.6687 4.65153 10.6687C4.3725 10.6687 4.12528 10.4687 4.07516 10.1844C4.01899 9.86575 4.2318 9.56185 4.55047 9.50567L13.7831 7.8777C14.102 7.82153 14.4057 8.03431 14.4619 8.35298C14.518 8.67169 14.3052 8.9756 13.9865 9.03177Z" fill="#5142FC"/>
-              </svg>     
-              <span>Create</span>
+              <a href="{{url('/create_item')}}" class="w-[130px] h-[45px] flex justify-center items-center gap-x-[10px]">               
+                 <svg width="18" height="18" viewBox="0 0 18 18" fill="blue" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.991 14.8704L15.549 1.02157C15.4928 0.7029 15.189 0.490244 14.8702 0.546298L1.02141 2.98821C0.702743 3.04438 0.48993 3.34829 0.546102 3.66696L2.98801 17.5158C3.015 17.6689 3.10168 17.8049 3.22899 17.8941C3.32817 17.9635 3.44563 18 3.56508 18C3.59895 18 3.63301 17.9971 3.6668 17.9911L17.5156 15.5492C17.6687 15.5223 17.8047 15.4356 17.8939 15.3083C17.983 15.181 18.0179 15.0235 17.991 14.8704ZM3.66821 7.8763C3.61203 7.55763 3.82485 7.25372 4.14352 7.19755L13.3761 5.56958C13.6951 5.51341 13.9987 5.72618 14.0549 6.04485C14.1111 6.36353 13.8983 6.66743 13.5796 6.7236L4.34699 8.35161C4.31258 8.35767 4.27832 8.3606 4.24457 8.3606C3.96555 8.3606 3.71832 8.1606 3.66821 7.8763ZM11.316 11.8826L5.16098 12.9679C5.12656 12.974 5.09231 12.9769 5.05856 12.9769C4.77953 12.9769 4.53231 12.7769 4.48219 12.4926C4.42602 12.1739 4.63883 11.87 4.9575 11.8138L11.1125 10.7285C11.4314 10.6723 11.7351 10.8851 11.7913 11.2038C11.8475 11.5225 11.6347 11.8264 11.316 11.8826ZM13.9865 9.03177L4.75395 10.6597C4.71953 10.6658 4.68528 10.6687 4.65153 10.6687C4.3725 10.6687 4.12528 10.4687 4.07516 10.1844C4.01899 9.86575 4.2318 9.56185 4.55047 9.50567L13.7831 7.8777C14.102 7.82153 14.4057 8.03431 14.4619 8.35298C14.518 8.67169 14.3052 8.9756 13.9865 9.03177Z" fill="#5142FC"/>
+                 </svg>     
+                 <span>Create</span>
+              </a>
           </button> 
       </div>    
   </div>
@@ -158,63 +165,47 @@
 
     <div class="w-screen flex flex-col gap-y-[20px] overflow-x-hidden py-[50px] bg-black">
       <span class="text-white text-[25px] relative left-[150px] font-bold">New Post</span>
+      
+      
       <x-MyComponents.carrousell/>
     </div>
 
     <div class="w-screen flex flex-col gap-y-[20px] items-center py-[50px] bg-gray-950">
         <div class="w-[900px] flex flex-col gap-y-[20px]">
             <span class="text-white text-[25px]">Top Sellers</span>
-            <div class="w-[950px] flex gap-x-[50px] gap-y-[30px] flex-wrap overflow-hidden">
-            
-              <x-MyComponents.picture-info authorPicture="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" size="70px">
-                  <span class="text-gray-500">Creator</span>
-                  <span class="font-bold">La china</span>
-              </x-MyComponents.picture-info>
+            <div class="w-[950px] flex gap-x-[25px] gap-y-[30px] flex-wrap overflow-hidden">
+           
 
-              <x-MyComponents.picture-info authorPicture="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" size="70px">
-                  <span class="text-gray-500">Creator</span>
-                  <span class="font-bold">La china</span>
-              </x-MyComponents.picture-info>
+            @php
 
-              <x-MyComponents.picture-info authorPicture="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" size="70px">
-                  <span class="text-gray-500">Creator</span>
-                  <span class="font-bold">La china</span>
-              </x-MyComponents.picture-info>
+                $sales = DB::table('sales')
+                     -> skip(0) -> take(10) -> get() ; 
+            @endphp
 
-              <x-MyComponents.picture-info authorPicture="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" size="70px">
-                  <span class="text-gray-500">Creator</span>
-                  <span class="font-bold">La china</span>
-              </x-MyComponents.picture-info>
+            @foreach($sales as $sale)
+                @php    
+                $item_id = $sale -> item_id;    
 
-              <x-MyComponents.picture-info authorPicture="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" size="70px">
-                  <span class="text-gray-500">Creator</span>
-                  <span class="font-bold">La china</span>
-              </x-MyComponents.picture-info>
+                $author_id = DB::table('items')->select('author_id')
+                ->where('id', '=', $item_id)
+                ->get()[0]->author_id;  
+                
+                
+                $author_name = DB::table('authors')->select('name')
+                ->where('id', '=', $author_id)
+                ->get()[0]->name;  
 
-              <x-MyComponents.picture-info authorPicture="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" size="70px">
-                  <span class="text-gray-500">Creator</span>
-                  <span class="font-bold">La china</span>
-              </x-MyComponents.picture-info>
+               
+                
+                @endphp
 
-              <x-MyComponents.picture-info authorPicture="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" size="70px">
-                  <span class="text-gray-500">Creator</span>
-                  <span class="font-bold">La china</span>
-              </x-MyComponents.picture-info>
+                <x-MyComponents.picture-info authorPicture="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" size="50px">
+                  <span class="text-gray-500 text-[12px]">Creator</span>
+                  <span class="font-bold text-[12px]">{{$author_name}}</span>
+                </x-MyComponents.picture-info>
 
-              <x-MyComponents.picture-info authorPicture="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" size="70px">
-                  <span class="text-gray-500">Creator</span>
-                  <span class="font-bold">La china</span>
-              </x-MyComponents.picture-info>
+            @endforeach  
 
-              <x-MyComponents.picture-info authorPicture="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" size="70px">
-                  <span class="text-gray-500">Creator</span>
-                  <span class="font-bold">La china</span>
-              </x-MyComponents.picture-info>
-
-              <x-MyComponents.picture-info authorPicture="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" size="70px">
-                  <span class="text-gray-500">Creator</span>
-                  <span class="font-bold">La china</span>
-              </x-MyComponents.picture-info>
             </div>
         </div>
         <div class="mt-[50px]">

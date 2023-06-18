@@ -153,9 +153,10 @@
 
 
 
-                <div>
-                    <h1 class="text-[50px] text-gray-900">WELCOME TO</h1>
+                <div class="flex flex-col items-center justify-center gap-y-[30px]">
+                    <h1 class="text-[60px] text-gray-900 text-center font-bold ">WELCOME TO</h1>
                     <x-MyComponents.axieslogo/>
+                    <h2 class = "text-[23px] text-gray-700 text-center">Your Best Selection On NFTs Trading</h2>
                 </div>
 
 

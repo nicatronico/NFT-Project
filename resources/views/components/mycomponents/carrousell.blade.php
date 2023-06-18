@@ -1,15 +1,51 @@
-<div class="bg-inherit flex gap-x-[60px] overflow-hidden">
-    <x-MyComponents.card url="https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
-    <x-MyComponents.card url="https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
-    <x-MyComponents.card url="https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
-    <x-MyComponents.card url="https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
-    <x-MyComponents.card url="https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
-    <x-MyComponents.card url="https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
-    <x-MyComponents.card url="https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
-    <x-MyComponents.card url="https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
-    <x-MyComponents.card url="https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
-    <x-MyComponents.card url="https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
-    <x-MyComponents.card url="https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" :likes="0" :title="$title ?? ''" :author="$author ?? ''" :price="$price ?? ''"/>
+
+<div class="bg-inherit flex gap-x-[35px] overflow-hidden justify-center">
+    @php
+        
+        $items = DB::select('select * from items');
+        
+    @endphp 
+    
+
+    @foreach($items as $item)
+        @php
+            $path = $item->image;
+            $title = $item->title;
+            $author_id = $item->author_id;
+            $author = DB::table('authors')->select('name')->where('id', '=', $item->author_id)->get();
+            $author = $author[0]->name;
+
+            $likes = DB::table('likes')->select('likeable_type')->where('likeable_id', '=', $item->id, 'and', 'likeable_type', '=', 'App\Models\Item')->get();
+            $likes = count($likes);
+            $price = $item->price;
+           
+        @endphp
+            <x-MyComponents.card id="card">
+                <x-slot:path>
+                    {{$path}}
+                </x-slot>
+
+                <x-slot:title>
+                    {{$title ?? ''}}
+                </x-slot>
+
+                <x-slot:author>
+                    {{$author ?? ''}}
+                </x-slot>
+
+                <x-slot:likes>
+                    {{$likes ?? ''}}
+                </x-slot>
+
+                <x-slot:price>
+                    {{$price ?? ''}}
+                </x-slot>
+           </x-MyComponents.card>       
+    
+    @endforeach
+
+    
+   
 </div>
 
 <div id = buttons_container class="flex gap-x-[25px] items-center justify-center">
