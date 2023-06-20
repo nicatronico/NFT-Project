@@ -38,15 +38,17 @@ class ItemController extends Controller
                 ]
         );
         
-        $item = new Item();
+          dd("The Lord is my sheapherd");
 
-        $item->image = $request->path;
+       // $item = new Item();
+
+        $item->image = $request->inputFile;
         $item->price = $request->price;
         $item->title = $request->title;
         $item->description = $request->description;
         $item->royalties = $request->royalties;
         $item->size = $request->size;
-
+        
         $author=DB::table('authors')->where('name', $request->author)->first();
         
         if(!$author){
@@ -72,12 +74,33 @@ class ItemController extends Controller
         $item->category_id = $category->id;      
         
 
-       
-      
+      // $item->save();
+
+
+      Item::create(
+        [
+        'image' => $item->image,
+        'price' => $item->price,
+        'title' => $item->title,
+        'description' => $item->description,
+        'royalties' => $item->royalties,
+        'size' => $item->size,
+        'author_id' => $item->author_id,
+        'collection_id' => $item->collection_id,
+        'category_id' => $item->category_id
+        ]
+      );
+
+
+       $image = $request->file("inputFile");
+
+       $path = $image->storePubliclyAs($image->getClientOriginalName());
+
+
         return view('components.MyComponents.createitem',
         [
       //  'path' => $request->path,
-        'path' => "https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&w=600",
+        'path' => $path,
         'price' => $request->price,
         'title' => $request->title,
         'description' => $request->description,
@@ -93,11 +116,6 @@ class ItemController extends Controller
     public function show(string $id)
     {
         
-    }
-
-    public function getAllItems(){
-        $items = Item::query()->get();
-        return(['items' -> $items]);
     }
 
     

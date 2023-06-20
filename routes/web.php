@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/create_item', function(){
         return view('components.MyComponents.createitem');
     });
+
     
 
     Route::get('/home', function(){
@@ -56,15 +57,12 @@ Route::middleware('auth')->group(function () {
         return view('components.MyComponents.author-profile');
     });
 
+
+    
+    Route::post('/upload', [ItemController::class,'store'])->name('upload');
+    
 });
 
 
-
-/*
-Route::get('/create_item', function(){
-    return view('components.MyComponents.createitem');
-});
-*/
-Route::post('/upload', [ItemController::class,'store']);
 
 require __DIR__.'/auth.php';

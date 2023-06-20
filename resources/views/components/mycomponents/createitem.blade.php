@@ -33,7 +33,7 @@
        
 
         <div>
-            <form id = "form" action="{{action([\App\Http\Controllers\ItemController::class, 'store'])}}" method ="post" enctype="multipart/form-data" class="w-[450px] flex flex-col gap-y-[15px] bg-inherit text-white">
+            <form id = "form" action="{{action([App\Http\Controllers\ItemController::class, 'store'])}}" method ="Post" enctype="multipart/form-data" class="w-[450px] flex flex-col gap-y-[15px] bg-inherit text-white">
                 @csrf
                 <label for="path" class="text-[20px] font-bold leading-[26px] text-white">Upload file</label>
                 <input type="text" id="text" placeholder="PNG, JPG, GIF, WEBP or MP4, Max 200mb" name="path" class="w-[450px] h-[75px] rounded-[8px] border-2 border-white bg-inherit text-[12px]">
@@ -146,12 +146,9 @@
         btn.addEventListener("change", ()=>{
             text.value = btn.value           
         })
+      
+    </script> 
 
-        title.addEventListener("change", ()=>{
-            
-        })
-    </script>
- 
 </x-MyComponents.maintemplate>
 
 

@@ -173,13 +173,13 @@
     <div class="w-screen flex flex-col gap-y-[20px] items-center py-[50px] bg-gray-950">
         <div class="w-[900px] flex flex-col gap-y-[20px]">
             <span class="text-white text-[25px]">Top Sellers</span>
-            <div class="w-[950px] flex gap-x-[25px] gap-y-[30px] flex-wrap overflow-hidden">
+            <div class="w-[950px] flex gap-x-[40px] gap-y-[30px] flex-wrap overflow-hidden">
            
 
             @php
 
                 $sales = DB::table('sales')
-                     -> skip(0) -> take(10) -> get() ; 
+                     -> skip(0) -> take(10) -> get(); 
             @endphp
 
             @foreach($sales as $sale)
@@ -217,6 +217,8 @@
 
   <x-MyComponents.footer/>
 </x-MyComponents.maintemplate>
+
+
 
 
 
